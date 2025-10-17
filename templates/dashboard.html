@@ -1,0 +1,28 @@
+{% extends 'main.html' %}
+
+{% block title %}Dashboard - Bee Jay{% endblock %}
+
+{% block content %}
+<section class="card-grid">
+    <div class="card tile slide-up">
+        <h3>Name</h3>
+        <p>{{ user_info.name }}</p>
+    </div>
+    <div class="card tile slide-up delay-1">
+        <h3>BVN</h3>
+        <p>{{ user_info.bvn }}</p>
+    </div>
+    <div class="card tile slide-up delay-2">
+        <h3>NIN</h3>
+        <p>{{ user_info.nin }}</p>
+    </div>
+    <div class="card tile slide-up delay-3">
+        <h3>Email</h3>
+        <p>{{ user_info.email }}</p>
+    </div>
+    <div class="card tile slide-up delay-4">
+        <h3>Phone</h3>
+        <p>{{ user_info.phone }}</p>
+    </div>
+</section>
+{% endblock %}

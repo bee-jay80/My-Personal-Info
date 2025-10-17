@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>{% block title %}Me - Secure{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'index.css' %}">
+</head>
+<body class="theme-dark">
+    <div id="app" class="page-fade">
+        <header class="topbar">
+            <div style="display:flex;align-items:center;gap:12px;">
+                <img src="{% static 'img/me.jpg' %}" alt="profile" class="avatar"/>
+                <h1 class="brand">Bee Jay — Secure Info</h1>
+            </div>
+        </header>
+
+        <main class="container">
+            {% block content %}{% endblock %}
+        </main>
+
+        <footer class="footer">
+            <small>© {% if user_info %}{{ user_info.name }}{% else %}Bee Jay{% endif %} • Built with care</small>
+        </footer>
+    </div>
+
+    <div id="loading-overlay" class="hidden" style="display:none;">
+        <div class="loader"></div>
+        <div class="loading-text">Loading…</div>
+    </div>
+
+    <script src="{% static 'script.js' %}"></script>
+</body>
+</html>
